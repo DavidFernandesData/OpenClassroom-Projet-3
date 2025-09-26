@@ -1,104 +1,118 @@
-# OpenClassroom-Projet-3
-Projet 3 — Étude de santé publique (FAO) avec R ou Python
+#Projet 3 — Réalisez une étude de santé publique (FAO) avec R ou Python
 
 
 
 
-Contexte — Vous rejoignez une équipe FAO (ONU) pour contribuer à une étude sur l’alimentation et la sous‑nutrition. Julien (ancien DA) a couvert 2018→aujourd’hui. Votre périmètre : historique 2013→2017. Livrables présentés lors d’une soutenance.
+Contexte — Vous intégrez une équipe de la FAO (ONU) pour contribuer à une étude sur l’alimentation et la sous‑nutrition. L’ancien analyste a couvert 2018→présent ; votre périmètre est l’historique 2013→2017. Les livrables seront présentés en soutenance.
 
-🧭 Résumé exécutif
+🎯 Objectifs & compétences
 
-Objectif : explorer, analyser et communiquer les tendances de sous‑nutrition mondiale (2013–2017) à partir des données FAO.
+Manipuler, nettoyer et documenter des données publiques FAO.
 
-Méthode : Notebook Python (pandas, numpy, matplotlib/plotly, statsmodels) ou R (tidyverse, ggplot2, broom).
+Réaliser une analyse exploratoire (EDA) et des visualisations interprétables.
 
-Sorties : Notebook reproductible, slides de synthèse, figures prêtes à l’impression, notes d’interprétation.
+Structurer une narration claire et reproductible via Notebook (R ou Python).
 
-Collaboration : intégrer (ou comparer à) l’ébauche/notes de Julien (2018+), conserver un lexique commun.
+Synthétiser les enseignements dans un executive summary et des slides.
 
-🎯 Compétences visées
+📦 Livrables
 
-Manipulation & nettoyage de données (import, typage, valeurs manquantes, normalisation).
+notebooks/etude_fao_2013_2017.ipynb ou notebooks/etude_fao_2013_2017.Rmd (reproductible de A→Z).
 
-Analyse exploratoire (EDA) & dataviz interprétables pour non‑spécialistes.
+figures/ : graphiques exportés (.png/.svg, 300 dpi).
 
-Raisonnement analytique (hypothèses, métriques, limites) & storytelling.
+data/processed/ : données nettoyées + dictionnaire (lexique).
 
-Reproductibilité (environnements, seed, scripts, structure de dépôt).
+slides/presentation_etude_fao.pptx : ≤ 10 slides, ≤ 7 éléments/slide.
 
-📦 Livrables attendus
+reports/executive_summary.md : conclusions, limites, recommandations.
 
-notebooks/etude_fao_2013_2017.ipynb ou notebooks/etude_fao_2013_2017.Rmd (exécutable de bout en bout).
+env/requirements.txt (Python) ou env/renv.lock (R) ; env/environment.yml optionnel.
 
-slides/presentation_etude_fao.pptx (≤ 10 slides, ≤ 7 éléments/slide).
+🔍 Données & périmètre
 
-data/processed/ : jeux nettoyés + dictionnaire/lexique mis à jour.
+Période analysée : 2013–2017 (historique). Comparaison possible avec 2018+ (travail existant).
 
-figures/ : graphiques en .png/.svg (300 dpi) référencés dans le notebook.
+Sources : fichiers FAO (PJ), + lexique (définitions, unités, codes pays).
 
-reports/executive_summary.md : résumé des conclusions & recommandations.
-
-Optionnel : requirements.txt / environment.yml (Python) ou renv.lock (R), Makefile/run.sh.
-🔍 Données
-
-Provenance : FAO — fichiers livrés en PJ (Données FAO.zip).
-
-Périmètre d’analyse : 2013–2017 (historique). Pour mise en perspective, comparer aux points clés 2018+ (notes Julien).
-
-Lexique : PJ3 (mettre à jour si renaming de variables).
-
-Considérations : unités, périodicité, couverture géographique, changements méthodologiques.
+Points d’attention : cohérence d’unités, ruptures de séries, données manquantes, population (dénominateur), agrégations régionales.
 
 📊 Questions d’analyse (guide)
 
-Tendance globale de la sous-nutrition (prévalence/absolu) 2013–2017.
+Tendances globales de la sous‑nutrition (prévalence & effectifs) 2013–2017.
 
-Découpage régional (ex. Afrique subsaharienne, Asie du Sud, Amérique latine…).
+Écarts régionaux (ex. Afrique subsaharienne, Asie du Sud, Amérique latine…).
 
-Distribution (quartiles, outliers) par pays/année.
+Distribution par pays (quartiles, outliers) et trajectoires notables.
 
-Co‑évolution avec variables contextuelles disponibles (ex. approvisionnement kcal/hab, population).
+Co‑évolution avec variables contextuelles disponibles (ex. disponibilités kcal/hab, population).
 
-Écarts vs 2018+ (pont méthodologique avec le travail de Julien, si pertinent).
-
-Sensibilités & limites : qualité des données, ruptures de séries, imputations.
-
-Ajoutez toute analyse complémentaire pertinente (saisonnalité, comparaison par revenu, clusterisation simple, etc.).
+Limites & sensibilités : qualité/complétude, changements méthodo, effets d’agrégation.
 
 🧪 Méthodologie (notebook)
 
-Préparation : description des fichiers, chargement, dictionnaire, contrôles de cohérence.
+Import & contrôle : lecture, typage, checks (dédoublonnage, NA, bornes).
 
-Nettoyage : renommage clair, formats de dates, gestion NA/outliers, clés (pays/année).
+Nettoyage : renommage clair, harmonisation des codes pays, normalisation des dates.
 
-EDA : stats descriptives, tableaux/bornes de confiance simples.
+EDA : statistiques descriptives, corrélations simples, tableaux récap.
 
-Viz : séries temporelles, barres empilées par région, cartes choroplèthes (optionnel), distributions.
+Viz : séries temporelles, barres empilées régionales, boxplots pays, carte choroplèthe (optionnel).
 
-Synthèse : messages clés & implications politiques.
+Synthèse : messages clés, incertitudes, implications politiques.
 
-🗣️ Storyline recommandée (pour la soutenance)
+🗣️ Storyline pour la soutenance
 
-Contexte & données (1 slide).
+Contexte & objectifs (1 slide)
 
-Tendances clés 2013–2017 (2–3 slides).
+Données & méthode (1–2)
 
-Focus régions/pays (2 slides).
+Résultats clés 2013–2017 (3–4)
 
-Facteurs associés & limites (1–2 slides).
+Focales régionales/pays (2)
 
-Conclusion & pistes (1 slide) + pont vers 2018+.
+Limites & implications (1)
+
+Conclusion & pistes (1) + pont 2018+
 
 🔐 Éthique & conformité
 
 Données publiques FAO : respecter les conditions d’utilisation.
 
-Respecter la RGPD et l’éthique de publication (pas de ré‑identification).
+RGPD/éthique : pas de ré‑identification ; prudence sur les comparaisons sensibles.
 
 📚 Ressources
 
-Cours OpenClassrooms : Python | R (recommandés par Julien).
+Cours recommandés : Python & R (OpenClassrooms).
 
-PJ1 : Ébauche de trame (avec commentaires) — point de départ.
+Supports : Ébauche de présentation (PJ), Notebooks (R/Python), Lexique.
 
-PJ4 : Notebooks (Python & R) — libre d’adapter.
+🔎 Extraits des fichiers fournis
+
+Présentation (PDF) : titres et sections clés — Kilocalories par habitant ; Liste des céréales (ex. avoine, millet, sorgho, « Céréales, autres ») ; Top 10 pays ayant le plus bénéficié de l’aide alimentaire (2013–2016) ; Évolution de l’aide alimentaire pour les 5 pays principaux (Syrie, Yémen, Soudan, Soudan du Sud, …).
+
+Notebook PDF : plan structuré — 2.1 Population, 2.2 Disponibilité alimentaire, 2.3 Aide alimentaire, 2.3 Sous‑nutrition ; modules méthodo 3.3 Nombre théorique de personnes nourries (végétaux), 3.4 Utilisation de la disponibilité intérieure ; sorties avec tableaux et impressions de dimensions des datasets.
+
+Notebook .ipynb : cellules d’import & d’EDA, commentaires pédagogiques, import pandas as pd.
+
+📈 Faits saillants (issus des notebooks/PDF)
+
+Capacité théorique d’alimentation (2017) :
+
+Avec la disponibilité totale: ~139 % de la population mondiale pourrait être nourrie (calcul basé sur ~2 000 kcal/j/hab).
+
+Avec la seule origine végétale: ~92 % (hypothèse ~2 500 kcal/j/hab pour les végétaux).
+
+Aide alimentaire (2013–2016) : concentration sur un petit nombre de pays avec en tête Syrie, Yémen, Soudan, Soudan du Sud (liste Top 10 et séries temporelles dans la présentation).
+
+Données thématiques : suivis par pays/année, disponibilité en kcal/hab/j, ventilations par origine (végétale/animale) et usage (nourriture, pertes, semences, aliments pour animaux, variation de stock).
+
+Ces éléments sont intégrés pour contextualiser le README et guider la soutenance. Remplacez/complétez selon vos résultats finaux.
+
+👤 Auteur & licence
+
+Auteur : David Fernandes — David.Fernandes.data@gmail.com
+
+Licence : CC BY‑NC‑SA 4.0 Auteur : Votre Nom — votre.email@example.com
+
+Licence : CC BY‑NC‑SA 4.0
