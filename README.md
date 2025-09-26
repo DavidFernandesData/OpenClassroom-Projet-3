@@ -113,6 +113,4 @@ Ces éléments sont intégrés pour contextualiser le README et guider la souten
 
 Auteur : David Fernandes — David.Fernandes.data@gmail.com
 
-Licence : CC BY‑NC‑SA 4.0 Auteur : Votre Nom — votre.email@example.com
-
 Licence : CC BY‑NC‑SA 4.0
